@@ -14,7 +14,18 @@ namespace TaskTracker.Services
             tasks = new List<TaskItem>();
             nextId = 1;
         }
-
+        public List<TaskItem> GetTasksByPriority(TaskPriority priority)
+        {
+            List<TaskItem> result = new List<TaskItem>();
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if (tasks[i].Priority == priority)
+                {
+                    result.Add(tasks[i]);
+                }
+            }
+            return result;
+        }
         public TaskItem AddTask(string title, string description)
         {
             TaskItem task = new TaskItem(nextId, title, description);
