@@ -1,9 +1,7 @@
-namespace TaskTracker.Models
+public enum TaskStatus
 {
-    public enum TaskStatus
-    {
-        New,
-        InProgress,
-        Done
-    }
+    New,
+    InProgress,
+    Done,
+    Cancelled
 }
